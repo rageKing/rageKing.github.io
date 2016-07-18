@@ -1,0 +1,162 @@
+body{
+	
+	background-image: url("../images/pic1.jpg") ;
+	background-color: #FCFCFC; 
+	background-repeat: no-repeat;
+	background-position: center;
+	background-attachment: fixed;
+	
+	font-family: 'Scope One', serif;
+	
+}
+
+
+#greet{
+	
+	font-size:105px;
+	color: #555555;
+	position:relative;
+	left:10px;
+	padding: 5px;
+	background-color: #ffffff;
+	height: 105px;
+}
+
+#comma{
+	color:#fe0000;
+}
+
+#sub{
+	position: relative;
+	left:60px;
+	top:-40px;
+	
+	
+}
+
+#leftbar{
+	position:relative;
+	top: -10px;
+	left: 5px;
+	width: 355px;
+	
+}
+
+.header{
+	
+	background-color:#000000;
+	color:#FFFFFF;
+	width:1920px;
+	height:30px;
+	position: fixed;
+	top: 0px;
+	left:0px;
+	padding: 11px;
+	font-size: 35px;
+	font-weight:bold;
+	z-index: 10;
+	
+	
+	
+}
+
+#i{
+	
+	position:relative;
+	top: -20px;
+	left: 75px;
+	font-size: 65px;
+	background-color: #ffffff;
+	
+}
+
+#am{
+	position:relative;
+	top: 0px;
+	left: 40px;
+	font-size: 65px;
+	background-color: #ffffff;
+	height: 65px;
+}
+
+#binigya{
+	position:relative;
+	top: 30px;
+	left: -30px;
+	font-size: 75px;
+	color:#fe0000;
+	background-color: #ffffff;
+	height: 70px;
+}
+
+#dot{
+	color:#555555;
+}
+
+#icons{
+	
+	position:relative;
+	top:30px;
+	left: 40px;
+	letter-spacing: 1.7em;
+	
+	
+}
+
+#about{
+	
+	
+	width:570px;
+	height:500px;
+	position: relative;
+	left: 750px;
+	top: -460px;
+	
+	
+	
+}
+
+#aboutmeh{
+	
+	font-size:75px;
+	position:relative;
+	top: -20px;
+	left: 60px;
+	background-color: #ffffff;
+	width: 350px;
+	padding: 10px;
+	height: 85px;
+	
+	
+}
+
+#aboutmep{
+	position:relative;
+	top:-75px;
+	font-size: 24px;
+	background-color: #ffffff;
+	width:500px;
+	height: 200px;
+	padding:10px;
+	
+}
+
+#work{
+	
+	position:relative;
+	top:-643px;
+	left: 750px;
+	font-size: 24px;
+	background-color: #ffffff;
+	width:500px;
+	height: 250px;
+	padding:10px;
+	
+}
+
+
+#rightbar{
+	position:absolute;
+	top:490px;
+	
+}
