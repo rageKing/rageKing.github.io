@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <!-- To make the pages responsive -->
+  <title>CHECKOUT -- ONLINE WEBSTORE!</title>
+
+  <!-- style section to include our own hand-crafted CSS code in our page: -->
+
+  <style>
+
+    input[type="number"]
+    {
+      width:50px;
+    }
+
+
+    .footer {
+      background-color: darkgrey;
+      color: white;
+      height: 20%;
+    }
+
+    @media (min-width: 576px) and (max-width: 767px) {
+      .hidden-sm-down,
+      .hidden-md-down,
+      .hidden-lg-down,
+      .hidden-xl-down,
+      .hidden-xs-up,
+      .hidden-sm-up,
+      .hidden-unless-xs,
+      .hidden-unless-md,
+      .hidden-unless-lg,
+      .hidden-unless-xl {
+        display: none !important;
+      }
+    }
+  </style>
+
+  <!-- Importing the bootstrap CDN library for CSS only -->
+
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M"
+    crossorigin="anonymous">
+
+</head>
+
+<body>
+
+  <form action="https://www.paypal.com/cgi-bin/webscr" method="post">
+
+
+    <input type="hidden" name="cmd" value="_cart">
+    <input type="hidden" name="upload" value="1">
+
+    <!-- Identify your business so that you can collect the payments. -->
+    <input type="hidden" name="business" value="seller@dezignerfotos.com">
+
+
+    <!-- Specify details about the item that buyers will purchase. -->
+    <input type="hidden" name="item_name_1" value="Hot Sauce-12oz. Bottle">
+    <input type="hidden" name="amount_1" value="5.95">
+    <input type="hidden" name="shipping_1" value="99.9">
+    <input type="hidden" name="item_name_2" value="Casio CTK 496">
+    <input type="hidden" name="amount_2" value="122.95">
+    <input type="hidden" name="shipping_2" value="99.9">
+    <input type="hidden" name="currency_code" value="INR">
+
+    <!-- Display the payment button. -->
+    <input type="image" name="submit" border="0" src="https://www.paypalobjects.com/webstatic/en_US/i/btn/png/btn_buynow_107x26.png"
+      alt="Buy Now">
+    <img alt="" border="0" width="1" height="1" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif">
+
+ 
+
+
+  <table class="table table-hover">
+
+    <thead class="thead-inverse">
+      <tr>
+        <th>Qty</th>
+        <th>Item Name</th>
+        <th>Cost</th>
+        <th class="text-right">Subtotal</th>
+      </tr>
+
+    </thead>
+
+
+
+
+
+
+
+    <tbody id="output">
+
+    </tbody>
+
+  </table>
+</form>
+
+
+
+  <footer class="footer">
+
+    <div class="container">
+      <p class="text-center"><small>&copy; Copyright Binigya Dahal 2017</small></p>
+    </div>
+
+  </footer>
+
+
+  <!-- Importing the jQuery library, and before Bootstrap JS, BJS needs jQuery library already imported to work -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+
+
+
+  <script>
+    var shopCart = [];
+
+    //To load the DOM when the html document is actually ready!
+    $(document).ready(function () {
+
+
+
+
+      outputCart();
+
+      $('.dynqua').on('change keyup',function(){
+
+          console.log($(this).val());
+
+      })
+
+
+
+      function outputCart() {
+
+        if (sessionStorage["sca"] != null) {
+          shopCart = JSON.parse(sessionStorage["sca"].toString());
+          
+        }
+
+
+        var holderHTML = '';
+        var totalPrice = 0;
+        var itemCount = 0;
+
+        $.each(shopCart, function (index, value) {  //jQuery loop to iterate through the elements of an object or an array
+          //console.log(value);
+          var stotal = (value.quantity * value.price);
+          var a = (index+1); // a variable to track the index and add it by 1 as it starts from 0, to use in the checkout table to make it dynamic
+          totalPrice += stotal;
+          itemCount += parseInt(value.quantity);
+          holderHTML += '<tr><td> <input type="number" class="dynqua" name="quantity_'+a+'" value="'+ value.quantity +'"></td><td><input type="hidden" name="item_name_'+a+'" value="' +value.name+' '+value.s+'">'+value.name +'(' + value.s + ')</td><td><input type="hidden" name="amount_'+a+'" value="'+ formatMoney(value.price) +'"> &#8377; ' + formatMoney(value.price) + '</td><td class="text-right"> &#8377; ' + formatMoney(stotal) + '</td></tr>';
+
+        })
+
+        holderHTML += '<tr><td colspan="3" class="text-right"> Total: </td><td class="text-right"> &#8377; ' + formatMoney(totalPrice) + '</td></tr>';
+        $('#output').html(holderHTML);
+      
+
+      }
+
+      function formatMoney(n) {
+        return (n / 100).toFixed(2);
+      }
+
+    }
+
+    )
+  </script>
+
+
+
+</body>
+
+</html>
