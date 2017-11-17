@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <!-- To make the pages responsive -->
+    <title>Online Webstore!</title>
+
+    <!-- style section to include our own hand-crafted CSS code in our page: -->
+
+    <style>
+        /* Deprecated the item CSS to use Bootstrap styling instead */
+        /*
+        .item {
+            border: 1px solid grey;
+            padding: 20px;
+            width: 250px;
+            float: left;
+            height: 300px;
+        } */
+
+        #output {
+            clear: both;
+            /* border: 1px solid grey; */
+            /*  padding: 30px; */
+        }
+
+        #checkoutdiv {
+            display: none;
+        }
+
+        .footer {
+            background-color: darkgrey;
+            color: white;
+            height: 20%;
+        }
+
+        @media (min-width: 576px) and (max-width: 767px) {
+            .hidden-sm-down,
+            .hidden-md-down,
+            .hidden-lg-down,
+            .hidden-xl-down,
+            .hidden-xs-up,
+            .hidden-sm-up,
+            .hidden-unless-xs,
+            .hidden-unless-md,
+            .hidden-unless-lg,
+            .hidden-unless-xl {
+                display: none !important;
+            }
+        }
+    </style>
+
+    <!-- Importing the bootstrap CDN library for CSS only -->
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M"
+        crossorigin="anonymous">
+
+</head>
+
+<body>
+
+    <!-- Header Section for navigational links -->
+    <header class="header">
+
+        <div class="htop">
+
+
+            <!-- Top button to show grand total and proceed to checkout:  -->
+            <div id="checkoutdiv" class="container">
+
+                <div class="row">
+
+
+
+                    <div class="col-md-6 text-right">
+                        (<span class="items text-muted"></span><small>  items</small>) : <span class="total"></span>
+                    </div>
+
+                    <div class="col-md-6 text-right">
+                        <span class="btn btn-success" data-toggle="modal" data-target="#cart">Open Cart</span>
+                        <a href="checkout.html" class="btn btn-primary">Proceed to Checkout!</a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <div class="hbot">
+
+            <!-- Creating the Bootstrap NavBar with toggler for smaller screens -->
+
+            <div class="container">
+
+                <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+                    <a class="navbar-brand" href="#">Store </a>
+                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#myNavBar">
+                          <span class="navbar-toggler-icon"></span>
+                        </button>
+                    <div class="collapse navbar-collapse" id="myNavBar">
+                        <ul class="nav navbar-nav">
+                            <li class="nav-item active">
+                                <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">Products</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">About</a>
+                            </li>
+
+
+                        </ul>
+                    </div>
+                </nav>
+            </div>
+
+            <!-- Navbar end -->
+
+        </div>
+
+    </header>
+
+    <!-- Place where all of our content is going to go is this div.
+         The main, core content of each page.
+         This will be the part that will be changed on each page.
+    -->
+
+    <div class="content">
+
+        <!-- using the bootstrap container class to have ordered structure -->
+
+        <div class="container">
+
+            <div class="row">
+
+                <div class="col-md-3">
+
+                    <div class="card">
+                        <div class="card-body">
+                            <h3 class="card-title">iPhone</h3>
+                            <h6 class="card-subtitle text-muted">&#8377 500.00</h6>
+                            <img src="http://placehold.it/350x150" class="img-fluid"> </div>
+                        <div class="card-body">
+                            <div class="card-text">Product Information: this is a great product. it is so superb and cool, yo! #fillerText! <a href="#"
+                                    class="card-link productItem btn btn-info" data-name="iPhone" data-s="black" data-price="50000"
+                                    data-id="1">Add to Cart</a> </div>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="col-md-3">
+
+                    <div class="card">
+                        <div class="card-body">
+                            <h3 class="card-title">iPad</h3>
+                            <h6 class="card-subtitle text-muted">&#8377 200.00</h6>
+                            <img src="http://placehold.it/350x150" class="img-fluid">
+                        </div>
+
+                        <div class="card-body">
+                            <div class="card-text">
+                                Product Information: this is a great product. it is so superb and cool, yo! #fillerText!
+                                <a href="#" class="card-link productItem btn btn-info" data-name="iPad" data-s="16GB" data-price="20000" data-id="2">Add To Cart</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="card">
+                        <div class="card-body">
+                            <h3 class="card-title">AUX Cable</h3>
+                            <h6 class="card-subtitle text-muted">&#8377 5.00</h6>
+                            <img src="http://placehold.it/350x150" class="img-fluid">
+                        </div>
+
+                        <div class="card-body">
+                            <div class="card-text">
+                                Product Information: this is a great product. it is so superb and cool, yo! #fillerText!
+                                <a href="#" class="card-link productItem btn btn-info" data-name="AUX Cable" data-s="3" data-price="500" data-id="3">Add To Cart</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="card">
+                        <div class="card-body">
+                            <h3 class="card-title">SD Card</h3>
+                            <h6 class="card-subtitle text-muted">&#8377 30.00</h6>
+                            <img src="http://placehold.it/350x150" class="img-fluid">
+                        </div>
+
+                        <div class="card-body">
+                            <div class="card-text">
+                                Product Information: this is a great product. it is so superb and cool, yo! #fillerText!
+                                <a href="#" class="card-link productItem btn btn-info" data-name="SD Card" data-s="32GB" data-price="3000" data-id="4">Add To Cart</a>
+                            </div>
+                        </div>
+                    </div>
+
+
+                </div>
+
+            </div>
+
+            <div class="row">
+                <div class="col-md-3">
+                    <div class="card">
+                        <div class="card-body">
+                            <h3 class="card-title">SD Card</h3>
+                            <h6 class="card-subtitle text-muted">&#8377 20.00</h6>
+                            <img src="http://placehold.it/350x150" class="img-fluid">
+                        </div>
+
+                        <div class="card-body">
+                            <div class="card-text">
+                                Product Information: this is a great product. it is so superb and cool, yo! #fillerText!
+                                <a href="#" class="card-link productItem btn btn-info" data-name="SD Card" data-s="16GB" data-price="2000" data-id="5">Add To Cart</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="card">
+                        <div class="card-body">
+                            <h3 class="card-title">SD Card</h3>
+                            <h6 class="card-subtitle text-muted">&#8377 10.00</h6>
+                            <img src="http://placehold.it/350x150" class="img-fluid">
+                        </div>
+
+                        <div class="card-body">
+                            <div class="card-text">
+                                Product Information: this is a great product. it is so superb and cool, yo! #fillerText!
+                                <a href="#" class="card-link productItem btn btn-info" data-name="SD Card" data-s="4GB" data-price="1000" data-id="6">Add To Cart</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="card">
+                        <div class="card-body">
+                            <h3 class="card-title">Card Reader</h3>
+                            <h6 class="card-subtitle text-muted">&#8377 5.00</h6>
+                            <img src="http://placehold.it/350x150" class="img-fluid">
+                        </div>
+
+                        <div class="card-body">
+                            <div class="card-text">
+                                Product Information: this is a great product. it is so superb and cool, yo! #fillerText!
+                                <a href="#" class="card-link productItem btn btn-info" data-name="Card Reader" data-s="3P" data-price="500" data-id="7">Add To Cart</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="card">
+                        <div class="card-body">
+                            <h3 class="card-title">Sony PSP</h3>
+                            <h6 class="card-subtitle text-muted">&#8377 200.00</h6>
+                            <img src="http://placehold.it/350x150" class="img-fluid">
+                        </div>
+
+                        <div class="card-body">
+                            <div class="card-text">
+                                Product Information: this is a great product. it is so superb and cool, yo! #fillerText!
+                                <a href="#" class="card-link productItem btn btn-info" data-name="Sony PSP" data-s="4GB" data-price="20000" data-id="8">Add To Cart</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+
+
+
+
+    <footer class="footer">
+
+        <div class="container">
+            <p class="text-center"><small>&copy; Copyright Binigya Dahal 2017</small></p>
+        </div>
+
+    </footer>
+
+    <!-- MODALS : -->
+
+    <div class="modal fade" id="cart" tabindex="-1">
+
+        <div class="modal-dialog">
+
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title">Shopping cart</h4><button type="button" class="close" data-dismiss="modal">&times</button> </div>
+
+
+                <div class="modal-body">
+
+                    <table class="table table-hover">
+
+                        <thead class="thead-inverse">
+                            <tr>
+                                <th>Qty</th>
+                                <th>Item Name</th>
+                                <th>Cost</th>
+                                <th class="text-right">Subtotal</th>
+                            </tr>
+
+                        </thead>
+                        <tbody id="output">
+
+                        </tbody>
+
+                    </table>
+
+                </div>
+
+
+                <div class="modal-footer"> Shopping cart</div>
+            </div>
+
+        </div>
+
+
+    </div>
+
+
+    <!-- MODALS END -->
+
+
+
+
+    <!-- Importing the jQuery library, and before Bootstrap JS, BJS needs jQuery library already imported to work -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+
+    <!--Tether library required for bootstrap, and popper too! -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.3.7/js/tether.min.js" integrity="sha384-XTs3FgkjiBgo8qjEjBk0tGmf3wPrWtA6coPfQDfFEY8AnYJwjalXCiosYRBIBZX8"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.5/esm/popper-utils.js" integrity="sha384-XTs3FgkjiBgo8qjEjBk0tGmf3wPrWtA6coPfQDfFEY8AnYJwjalXCiosYRBIBZX8"
+        crossorigin="anonymous"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js" integrity="sha384-b/U6ypiBEHpOf/4+1nzFpr53nxSS+GLCkfwBdFNTxtclqqenISfwAzpKaMNFNmj4"
+        crossorigin="anonymous"></script>
+    <!-- Importing the bootstrap CDN library for the JS Part -->
+    <!-- Note that it has been included in the bottom, after all the content as if it fails to load somehow, it will not affect our pages in any way -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js" integrity="sha384-h0AbiXch4ZDo7tp9hKZ4TsHbi047NrKGLO3SEJAg45jXxnGIfYzk4Si90RDIqNm1"
+        crossorigin="anonymous"></script>
+
+    <script>
+        var shopCart = [];
+
+        //To load the DOM when the html document is actually ready!
+        $(document).ready(function () {
+
+
+
+
+            outputCart();
+
+
+            //An event listener to listen to Add to cart element
+
+            $(".productItem").click(function (e) {
+                e.preventDefault(); //we can prevent the default in HTML which tries to take you to somewhere, i.e make it do nothing!
+
+                var itemInfo = $(this.dataset)[0];
+
+                itemInfo.quantity = 1;  //set the quantity of the item clicked to be 1 
+
+                var itemInCart = false; //A boolean trigger to check if the item is in cart or not
+
+                $.each(shopCart, function (index, value) {  //jQuery loop to iterate through the elements of an object or an array
+
+                    //console.log(index + ' ' + value.id);
+
+                    if (value.id == itemInfo.id)  //check if the value id of the item to be added in the cart is equal to the item id of the item on the webpage
+                    {
+                        //update the quantity of the value(the item in the cart) with the previous value and the item count value
+                        value.quantity = parseInt(value.quantity) + parseInt(itemInfo.quantity);
+                        itemInCart = true;
+                    }
+
+                }
+                )
+
+                if (!itemInCart) {
+                    shopCart.push(itemInfo);
+                }
+
+                sessionStorage["sca"] = JSON.stringify(shopCart);
+                outputCart();
+                // console.log(sessionStorage["sca"]);
+
+            }
+            )
+
+
+            function outputCart() {
+
+                if (sessionStorage["sca"] != null) {
+                    shopCart = JSON.parse(sessionStorage["sca"].toString());
+                    // console.log(sessionStorage["sca"]);
+                    $('#checkoutdiv').show();
+                }
+
+
+                var holderHTML = '';
+                var totalPrice = 0;
+                var itemCount = 0;
+
+                $.each(shopCart, function (index, value) {  //jQuery loop to iterate through the elements of an object or an array
+                    //console.log(value);
+                    var stotal = (value.quantity * value.price);
+                    totalPrice += stotal;
+                    itemCount += parseInt(value.quantity);
+                    holderHTML += '<tr><td>' + value.quantity + '</td><td>#' + value.id + ' ' + value.name + '(' + value.s + ')</td><td>' + formatMoney(value.price) + '</td><td class="text-right">' + formatMoney(stotal) + '</td></tr>';
+
+                })
+
+                holderHTML += '<tr><td colspan="3" class="text-right"> Total: </td><td class="text-right">' + formatMoney(totalPrice) + '</td></tr>';
+                $('#output').html(holderHTML);
+                $('.total').html(formatMoney(totalPrice));
+                $('.items').html(itemCount);
+                console.log(itemCount);
+
+
+            }
+
+            function formatMoney(n) {
+                return '&#8377; ' + (n / 100).toFixed(2);
+            }
+
+        }
+
+        )
+    </script>
+
+</body>
+
+</html>
